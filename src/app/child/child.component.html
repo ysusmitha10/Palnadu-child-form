@@ -1,0 +1,391 @@
+<form  name="form" #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+    <h1 class=" text-center text-primary">Child Labour</h1>
+    <div class="main p-3 d-flex w-100">
+      
+      <div class="center m-1">
+         <div class="Name text-left text-muted w-40 m-0 mr-1">
+         <label >Name</label><br>
+         <div class="text-danger" *ngIf="Name.invalid && Name.touched">
+          fill this required field
+         </div>
+         </div>
+         <div class="mx-3">:</div>
+         <input type="text" minlength="6" maxlength="20" class="form-control w-60" 
+          #Name="ngModel" ngModel name="Name" required>
+      </div>
+  
+      <div class="center m-1">
+        <div class="Age text-left text-muted w-40 m-0 mr-1">
+          <label >Age</label><br>
+          <div class="text-danger" *ngIf="Age.invalid && Age.touched">
+            fill this required field
+          </div>
+          </div>
+          <div class="mx-3">:</div>
+          <input type="text" class="form-control w-60" 
+           #Age="ngModel" ngModel name="Age" required>
+      </div>
+  
+      <div class="center m-1">
+      <div class="Gender text-left text-muted w-40 m-0 mr-1">
+          <label class="">Gender</label><br>
+          <!-- <p class="m-0 text-danger" >Fill this field</p> -->
+        </div>
+        <div class="mx-3">:</div>
+        <div class="w-60 d-flex Gender">
+          <input required type="radio" ngModel name="Gender" value="Male" id="GenderMale"
+            class="btn-check mx-2">
+          <label for="GenderMale" class="btn btn-outline-secondary mr-2">Male</label>
+          <input required type="radio" ngModel name="Gender" value="Female" id="GenderFemale"
+            class="btn-check mx-2">
+          <label for="GenderFemale" class="btn btn-outline-secondary mx-2">Female</label>
+          <input required type="radio" ngModel name="Gender" value="Other" id="GenderOther"
+            class="btn-check mx-2">
+          <label for="GenderOther" class="btn btn-outline-secondary ml-2">Other</label>
+        </div>
+      </div>
+  
+      <div class="center m-1">
+        <div class="Father_Name text-left text-muted w-40 m-0 mr-1">
+          <label >Father Name</label><br>
+          <div class="text-danger" *ngIf="Father_Name.invalid && Father_Name.touched">
+            fill this required field
+          </div>
+          </div>
+          <div class="mx-3">:</div>
+          <input type="text" minlength="6" maxlength="20" class="form-control w-60" 
+           #Father_Name="ngModel" ngModel name="Father_Name" required>
+      </div>
+      
+      <div class="center m-1">
+        <div class="Mother_Name text-left text-muted w-40 m-0 mr-1">
+          <label >Mother Name</label><br>
+          <div class="text-danger" *ngIf="Mother_Name.invalid && Mother_Name.touched">
+            fill this required field
+          </div>
+          </div>
+          <div class="mx-3">:</div>
+          <input type="text" minlength="6" maxlength="20" class="form-control w-60" 
+           #Mother_Name="ngModel" ngModel name="Mother_Name" required>
+      </div>
+  
+      <div class="center m-1">
+        <div class="Guardian text-left text-muted w-40 m-0 mr-1">
+          <label >Guardian</label><br>
+          <div class="text-danger" *ngIf="Guardian.invalid && Guardian.touched">
+            fill this required field
+          </div>
+          </div>
+          <div class="mx-3">:</div>
+          <input type="text" minlength="6" maxlength="20" class="form-control w-60" 
+           #Guardian="ngModel" ngModel name="Guardian" required>
+      </div>
+  
+      <div class="center m-1" >
+        <div class="Father_Work text-left text-muted w-40 m-0 mr-1">
+          <label >Father Occuption</label><br>
+          <div class="text-danger" *ngIf="Father_Work.invalid && Father_Work.touched">
+            fill this required field
+          </div>
+          </div>
+          <div class="center m-1" *ngIf="FatherWork">
+            <label class="text-left text-muted w-40 m-0 mr-1">Work Type </label>
+            <div class="mx-3">:</div>
+            <input class="form-control w-60" type="text" ngModel name="FatherWork">
+          </div>
+      
+          <div class="center m-1">
+              <div class="Mother_Work text-left text-muted w-40 m-0 mr-1">
+                <label >Mother Occuption</label><br>
+                <div class="text-danger" *ngIf="Mother_Work.invalid && Mother_Work.touched">
+                  fill this required field
+                </div>
+                </div>
+                <div class="mx-3">:</div>
+                <div class="d-flex  w-60">
+                <select class="form-select"  #Mother_Work="ngModel" ngModel name="Mother_Work" required>
+                <option value="Labour">Labour</option>
+                <option value="House_Hold">House hold</option>
+                <option value="Working_in_hotels">Working in hotels</option>
+                <option value="Labour_Field_work">Field work</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+          </div>
+      
+          <div class="center m-1" *ngIf="MotherWork">
+            <label class="text-left text-muted w-40 m-0 mr-1">Work Type</label>
+            <div class="mx-3">:</div>
+            <input class="form-control w-60" type="text" ngModel name="MotherWork">
+          </div>
+      
+          <div class="center m-1">
+              <div class="Cast text-left text-muted w-40 m-0 mr-1">
+                <label >Cast</label><br>
+                <div class="text-danger" *ngIf="Cast.invalid && Cast.touched">
+                  fill this required field
+                </div>
+                </div>
+                <div class="mx-3">:</div>
+                <div class="d-flex  w-60">
+                <select class="form-select " #Cast="ngModel" ngModel name="Cast" required>
+                <option value="SC">SC</option>
+                <option value="ST">ST</option>
+                <option value="BC">BC</option>
+                <option value="OC">OC</option>
+              </select>
+            </div>
+          </div>
+      
+          <div class="center m-1">
+            <div class="Religion text-left text-muted w-40 m-0 mr-1">
+              <label >Religion</label><br>
+              <div class="text-danger" *ngIf="Religion.invalid && Religion.touched">
+                fill this required field
+              </div>
+              </div>
+              <div class="mx-3">:</div>
+              <div class="d-flex  w-60">
+              <select class="form-select " #Religion="ngModel" ngModel name="Religion" required>
+                <option value="Hinduism">Hinduism</option>
+                <option value="Islam">Islam</option>
+                <option value="Christainity">Christainity</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+          </div>
+      
+          <div class="center m-1" *ngIf="ReligionType">
+            <label class="text-left text-muted w-40 m-0 mr-1">Religion Type</label>
+            <div class="mx-3">:</div>
+            <input class="form-control w-60" type="text" ngModel name="ReligionType">
+          </div> 
+      
+          <div class="center m-1" >
+            <div class="Type text-left text-muted w-40 m-0 mr-1">
+              <label >Type of Work</label><br>
+              <div class="text-danger" *ngIf="Type_of_Work.invalid && Type_of_Work.touched">
+                fill this required field
+              </div>
+              </div>
+              <div class="mx-3">:</div>
+              <div class="d-flex  w-60">
+              <select class="form-select " #Type_of_Work="ngModel" ngModel name="Type_of_Work" required>
+                <option value="Shop_Pvt">Shop/Pvt Sector</option>
+                <option value="Railway_Station">Railway Station</option>
+                <option value="Hotels">Hotels</option>
+                <option value="Begging">Begging</option>
+                <option value="Brick_Klins">Brick Klins</option>
+                <option value="Factories">Factories</option>
+                <option value="Construction_Works">Construction Works</option>
+                <option value="others" >Others</option>
+              </select>
+            </div>
+          </div>
+        
+         <div class="center m-1" *ngIf="childwork">
+          <label class="text-left text-muted w-40 m-0 mr-1">Work Type</label>
+          <div class="mx-3">:</div>
+          <input class="form-control w-60" type="text" ngModel name="childwork">
+        </div> 
+          
+          <div class="center m-1">
+            <div class="SchoolJoined text-left text-muted w-40 m-0 mr-1">
+              <label class="">SchoolJoined</label><br>
+              <!-- <p class="m-0 text-danger" >Fill this field</p> -->
+            </div>
+            <div class="mx-3">:</div>
+            <div class="d-flex  w-60 join">
+              <input type="radio" required name="SchoolJoined" ngModel id="childYes" value="Joined"  (click)="Yes()"
+                class="btn-check mr-2">
+              <label for="childYes" class="btn btn-outline-secondary mr-2">Yes</label>
+              <input type="radio" required name="SchoolJoined" ngModel id="childNo" value="Not Joined"  (click)="No()"
+                class="btn-check mx-2">
+              <label for="childNo" class="btn btn-outline-secondary mx-2">No</label>
+            </div>
+          </div>
+      
+          <div class="center m-1" *ngIf="Child">
+            <label class="text-left text-muted w-40 m-0 mr-1">Studied Class</label>
+            <div class="mx-3">:</div>
+            <input class="form-control w-60" type="text" ngModel name="StudiedClass" >
+          </div>
+      
+          <div class="center m-1">
+             <div class="Class text-left text-muted w-40 m-0 mr-1">
+             <label> Class to be Admitted </label><br>
+             <div class="text-danger" *ngIf="ClasstobeAdmitted.invalid &&  ClasstobeAdmitted.touched">
+              fill this required field
+             </div>
+             </div>
+             <div class="mx-3">:</div>
+             <input type="text" class="form-control w-60" 
+              #ClasstobeAdmitted="ngModel" ngModel name="ClasstobeAdmitted" required>
+          </div>
+      
+          <div class="center m-1">
+            <div class="NearestSchool text-left text-muted w-40 m-0 mr-1">
+             <label >Nearest School</label><br>
+             <div class="text-danger" *ngIf="NearestSchool.invalid && NearestSchool.touched">
+              fill this required field
+             </div>
+             </div>
+             <div class="mx-3">:</div>
+             <input type="text" minlength="6" maxlength="20" class="form-control w-60" 
+              #NearestSchool="ngModel" ngModel name="NearestSchool" required>
+          </div>
+      
+          <div class="center m-1">
+            <div class="SchoolAddress text-left text-muted w-40 m-0 mr-1">
+             <label >School Address</label><br>
+             <div class="text-danger" *ngIf="SchoolAddress.invalid && SchoolAddress.touched">
+              fill this required field
+             </div>
+             </div>
+             <div class="mx-3">:</div>
+             <textarea row="20" cols="25" minlength="6" maxlength="100" class="form-control w-60" 
+              #SchoolAddress="ngModel" ngModel name="SchoolAddress" required>
+            </textarea>
+          </div>
+      
+          <div class="center m-1">
+            <div class="LivingRequirement text-left text-muted w-40 m-0 mr-1">
+              <label class="">Lively Hood Requirement</label><br>
+              <!-- <p class="m-0 text-danger">Fill this field</p> -->
+            </div>
+            <div class="mx-3">:</div>
+            <div class="w-60 join">
+              <input  type="radio" name="LivingRequirements" ngModel
+                value="Lively Hood Requirement Needed" id="LivingYes" class="btn-check mr-2" required>
+              <label class="m-1" for="LivingYes" class="btn btn-outline-secondary mr-2">Yes</label>
+              <input  type="radio" ngModel name="LivingRequirements" value="Lively Hood Requirement Not Needed"
+                id="LivingNo" class="btn-check mx-2 d-block" required>
+              <label class="m-1 d-block" for="LivingNo" class="btn btn-outline-secondary mx-2">No</label>
+            </div>
+          </div>
+      
+          <div class="center m-1">
+            <div class="aadhar text-left text-muted w-40 m-0 mr-1">
+              <label class="">Aadhar</label><br>
+              <!-- <p class="m-0 text-danger" >Fill this field</p> -->
+            </div>
+            <div class="mx-3">:</div>
+            <div class="d-flex join w-60">
+            <input type="radio" required ngModel name="Aadhar" id="chkYes" class="btn-check mr-2" value="Yes"
+                (click)="AAdharYes()">
+              <label for="chkYes" class="btn btn-outline-secondary mr-2">Yes</label>
+              <input type="radio" required ngModel name="Aadhar" id="chkNo" class="btn-check mx-2" value="No"
+                (click)="AAdharNo()">
+              <label for="chkNo" class="btn btn-outline-secondary mx-2">No</label>
+            </div>
+          </div>
+      
+          <div id="dvAadhar" *ngIf="aadhar">
+            <div class="center m-1">
+              <label class="text-left text-muted w-40 m-0 mr-1">Aadhar Number</label>
+              <div class="mx-3">:</div>
+              <div class="d-flex  w-60">
+                <input type="text" class=" form-control" ngModel name="Aadharno">
+              </div>
+            </div>
+          </div>
+          <div class="center m-1">
+            <div class="Ration text-left text-muted w-40 m-0 mr-1">
+              <label class="">Ration Card </label><br>
+              <!-- <p class="m-0 text-danger" >Fill this field</p> -->
+            </div>
+            <div class="mx-3">:</div>
+            <div class="d-flex join w-60">
+              <input  type="radio" required ngModel name="Ration" value="Having Ration" id="RationYes"
+                class="btn-check mr-2">
+              <label for="RationYes" class="btn btn-outline-secondary mr-2">Yes</label>
+              <input  required type="radio" ngModel name="Ration" value="Not having Ration" id="RationNo"
+                class="btn-check mx-2">
+              <label class="btn btn-outline-secondary mx-2" for="RationNo">No</label>
+            </div>
+          </div>
+      
+          <div class="center m-1">
+            <div class="Physicallyhandycapped text-left text-muted w-40 m-0 mr-1">
+              <label class="">Physically <br> Handycapped</label><br>
+              <!-- <p class="m-0 text-danger" >Fill this field</p> -->
+            </div>
+            <div class="mx-3">:</div>
+            <div class="d-flex join w-60">
+              <input type="radio" required ngModel name="Physicallyhandycapped"
+                value="Yes" id="PhysicallyhandycappedYes" class="btn-check mr-2">
+              <label class="btn btn-outline-secondary mr-2" for="PhysicallyhandycappedYes">Yes</label>
+              <input type="radio" required ngModel name="Physicallyhandycapped"
+                value="No" id="PhysicallyhandycappedNo" class="btn-check mx-2"><label
+                class="btn btn-outline-secondary mx-2" for="PhysicallyhandycappedNo">No</label>
+            </div>
+          </div>
+      
+          <div class="center m-1">
+            <div class="MentallyRetired text-left text-muted w-40 m-0 mr-1">
+              <label class="">Mentally Retired</label><br>
+              <!-- <p class="m-0 text-danger" >Fill this field</p> -->
+            </div>
+            <div class="mx-3">:</div>
+            <div class="d-flex join w-60">
+              <input type="radio" required ngModel name="MentallyRetired"  value="Yes"
+                id="MentallyRetiredYes" class="btn-check mr-2"><label class="btn btn-outline-secondary mr-2"
+                for="MentallyRetiredYes">Yes</label>
+              <input type="radio" required ngModel name="MentallyRetired"  value="No"
+                id="MentallyRetiredNo" class="btn-check mx-2"><label class="btn btn-outline-secondary mx-2"
+                for="MentallyRetiredNo">No</label>
+            </div>
+          </div>
+      
+          <div class="center m-1">
+            <div class="DeafandDumb text-left text-muted w-40 m-0 mr-1">
+              <label class="">Deaf and Dumb</label><br>
+              <!-- <p class="m-0 text-danger" >Fill this field</p> -->
+            </div>
+            <div class="mx-3">:</div>
+            <div class="d-flex join w-60">
+              <input type="radio" required ngModel name="DeafandDumb" value="Yes" id="DeafandDumbYes" class="btn-check mr-2">
+              <label class="btn btn-outline-secondary mr-2" for="DeafandDumbYes">Yes</label>
+              <input type="radio" required ngModel name="DeafandDumb"  value="No" id="DeafandDumbNo"
+                class="btn-check mx-2"><label class="btn btn-outline-secondary mx-2" for="DeafandDumbNo">No</label>
+            </div>
+          </div>
+      
+          <div class="center m-1">
+            <div class="InheritedDisabilities text-left text-muted w-40 m-0 mr-1">
+              <label class="">Inherited Disabilities</label><br>
+              <!-- <p class="m-0 text-danger" >Fill this field</p> -->
+            </div>
+            <div class="mx-3">:</div>
+            <div class="d-flex join w-60">
+              <input type="radio" required ngModel name="InheritedDisabilities"  value="Yes"
+                id="InheritedDisabilitiesYes" class="btn-check mr-2"><label class="btn btn-outline-secondary mr-2"
+                for="InheritedDisabilitiesYes">Yes</label>
+              <input type="radio" required ngModel name="InheritedDisabilities"  value="No"
+                id="InheritedDisabilitiesNo" class="btn-check mx-2"><label class="btn btn-outline-secondary mx-2"
+                for="InheritedDisabilitiesNo">No</label>
+            </div>
+          </div>
+      
+          <div class="center m-1">
+            <div class="PovertyandMalnutration text-left text-muted w-40 m-0 mr-1">
+              <label class="">Poverty and Malnutration</label><br>
+              <!-- <p class="m-0 text-danger" >Fill this field</p> -->
+            </div>
+            <div class="mx-3">:</div>
+            <div class="d-flex join w-60">
+              <input type="radio" required ngModel name="PovertyandMalnutration" 
+                value="Yes" id="PovertyandMalnutrationYes" class="btn-check mr-2">
+              <label class="btn btn-outline-secondary mr-2" for="PovertyandMalnutrationYes">Yes</label>
+              <input type="radio" required ngModel name="PovertyandMalnutration" 
+                value="No" id="PovertyandMalnutrationNo" class="btn-check mx-2">
+              <label class="btn btn-outline-secondary mx-2" for="PovertyandMalnutrationNo">No</label>
+            </div>
+          </div>
+      
+         </div>
+      
+        <div class="mx-auto center m-5">
+        <input type="submit" class="btn btn-primary" id="submit" value="Submit" [disabled]="!form.valid" >
+        </div>
+      </form>
